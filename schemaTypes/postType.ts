@@ -43,6 +43,7 @@ export default defineType({
       options: {
         layout: 'tags',
       },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'publishedAt',
