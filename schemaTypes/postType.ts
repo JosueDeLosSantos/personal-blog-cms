@@ -43,7 +43,7 @@ export default defineType({
       options: {
         layout: 'tags',
       },
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().min(1).unique().error('At least one tag is required'),
     }),
     defineField({
       name: 'publishedAt',
