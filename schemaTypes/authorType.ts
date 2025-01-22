@@ -16,6 +16,19 @@ export default defineType({
       name: 'bio',
       title: 'Bio',
       type: 'text',
+      validation: (Rule) =>
+        Rule.required()
+          .max(300)
+          .warning('Bio is required and should be less than or equal to 300 characters'),
+    }),
+    defineField({
+      name: 'about',
+      title: 'About',
+      type: 'text',
+      validation: (Rule) =>
+        Rule.required()
+          .max(2000)
+          .warning('About is required and should be less than or equal to 2000 characters'),
     }),
     defineField({
       name: 'image',
