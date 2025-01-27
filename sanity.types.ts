@@ -76,6 +76,24 @@ export type Author = {
   _rev: string
   name?: string
   bio?: string
+  about?: Array<{
+    children?: Array<{
+      marks?: Array<string>
+      text?: string
+      _type: 'span'
+      _key: string
+    }>
+    style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'blockquote'
+    listItem?: 'bullet' | 'number'
+    markDefs?: Array<{
+      href?: string
+      _type: 'link'
+      _key: string
+    }>
+    level?: number
+    _type: 'block'
+    _key: string
+  }>
   image?: {
     asset?: {
       _ref: string
@@ -87,6 +105,10 @@ export type Author = {
     crop?: SanityImageCrop
     _type: 'image'
   }
+  email?: string
+  linkedin?: string
+  xtwitter?: string
+  istagram?: string
 }
 
 export type Post = {
