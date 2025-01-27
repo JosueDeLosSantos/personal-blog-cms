@@ -24,7 +24,8 @@ export default defineType({
     defineField({
       name: 'about',
       title: 'About',
-      type: 'text',
+      type: 'array',
+      of: [{type: 'block'}],
       validation: (Rule) =>
         Rule.required()
           .max(2000)
@@ -37,6 +38,45 @@ export default defineType({
       options: {
         hotspot: true,
       },
+    }),
+    defineField({
+      name: 'email',
+      title: 'E-mail',
+      type: 'string',
+      validation: (Rule) => Rule.required().email().warning('Enter a valid email-address'),
+    }),
+    defineField({
+      name: 'linkedin',
+      title: 'LinkedIn',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.required()
+          .uri({
+            scheme: ['http', 'https'],
+          })
+          .warning('Enter a valid URL'),
+    }),
+    defineField({
+      name: 'xtwitter',
+      title: 'Xtwitter',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.required()
+          .uri({
+            scheme: ['http', 'https'],
+          })
+          .warning('Enter a valid URL'),
+    }),
+    defineField({
+      name: 'istagram',
+      title: 'Instagram',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.required()
+          .uri({
+            scheme: ['http', 'https'],
+          })
+          .warning('Enter a valid URL'),
     }),
   ],
 })
